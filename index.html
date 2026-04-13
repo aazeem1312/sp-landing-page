@@ -1,253 +1,399 @@
 <!DOCTYPE html>
-
-<html class="dark scroll-smooth" lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>SKINPROTOCOL | CLINICAL_MONOLITH</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SKINPROTOCOL | The Technical Manuscript</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        background: "#050505",
-                        surface: "#050505"
+                    "colors": {
+                        "inverse-on-surface": "#a09c96",
+                        "surface-variant": "#e8e2d1",
+                        "surface-container-highest": "#e8e2d1",
+                        "primary-fixed-dim": "#d7d4d3",
+                        "on-tertiary-fixed": "#105239",
+                        "error-container": "#fe8983",
+                        "tertiary-container": "#beffdc",
+                        "tertiary-fixed-dim": "#b1f0ce",
+                        "tertiary-dim": "#1f5e44",
+                        "outline-variant": "#b7b2a1",
+                        "secondary": "#5f5f5f",
+                        "on-tertiary": "#e6ffee",
+                        "error-dim": "#4e0309",
+                        "surface": "#fef9f1",
+                        "inverse-surface": "#0f0e0a",
+                        "on-error": "#fff7f6",
+                        "on-surface": "#353327",
+                        "secondary-dim": "#535353",
+                        "secondary-fixed-dim": "#d5d4d4",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-secondary": "#faf8f8",
+                        "on-background": "#353327",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container-high": "#eee8d9",
+                        "on-tertiary-container": "#27654a",
+                        "error": "#9f403d",
+                        "on-primary": "#faf7f6",
+                        "tertiary": "#2d6a4f",
+                        "on-secondary-container": "#515252",
+                        "on-surface-variant": "#625f51",
+                        "outline": "#7f7b6c",
+                        "tertiary-fixed": "#beffdc",
+                        "surface-dim": "#e0dac6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#403f3f",
+                        "secondary-container": "#e4e2e2",
+                        "primary-container": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#5b5b5b",
+                        "on-secondary-fixed": "#3f3f3f",
+                        "on-error-container": "#752121",
+                        "surface-bright": "#fef9f1",
+                        "primary": "#5f5e5e",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-low": "#f8f3e9",
+                        "on-primary-container": "#525151",
+                        "surface-container": "#f3ede1",
+                        "inverse-primary": "#ffffff",
+                        "primary-dim": "#535252",
+                        "background": "#fef9f1",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "on-tertiary-fixed-variant": "#336f54"
                     },
-                    borderRadius: {
-                        "DEFAULT": "0px",
-                        "lg": "0px",
-                        "xl": "0px",
-                        "full": "0px"
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
                     },
-                    fontFamily: {
-                        "headline": ["Space Grotesk", "sans-serif"],
-                        "body": ["Inter", "sans-serif"],
-                        "label": ["JetBrains Mono", "monospace"]
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["Space Grotesk"]
                     }
                 },
             },
         }
     </script>
-    <style>
-        body {
-            background-color: #050505;
-            color: #F5F0E8;
-            font-family: 'Space Grotesk', sans-serif;
-            -webkit-font-smoothing: antialiased;
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .ghost-border { outline: 1px solid rgba(183, 178, 161, 0.2); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        .mono-text {
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .hairline-y {
-            border-top: 1px solid #2A2A2A;
-            border-bottom: 1px solid #2A2A2A;
-        }
-        .hairline-t {
-            border-top: 1px solid #2A2A2A;
-        }
-        .hairline-b {
-            border-bottom: 1px solid #2A2A2A;
-        }
-        .grid-line {
-            position: fixed;
-            left: calc(50% - 240px);
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #2A2A2A;
-            z-index: -1;
-        }
+        .text-technical { font-family: 'Space Grotesk', monospace; }
+        .glass-header { background-color: rgba(254, 249, 241, 0.85); backdrop-filter: blur(24px); }
     </style>
 </head>
-<body class="flex flex-col items-center">
-    <!-- Structural Anchor Line -->
-    <div class="grid-line"></div>
-
-    <!-- Top Navigation Shell -->
-    <header class="fixed top-0 w-full z-50 border-b border-[#2A2A2A] bg-[#050505]">
-        <div class="max-w-[480px] mx-auto flex justify-between items-center px-6 h-16">
-            <span class="text-xl font-bold tracking-[0.2em] text-[#F5F0E8] font-['Space_Grotesk'] uppercase">SKINPROTOCOL</span>
-            <a href="#waitlist" class="font-['JetBrains_Mono'] text-[10px] tracking-tighter uppercase px-3 py-1 border border-[#F5F0E8] text-[#F5F0E8] hover:bg-[#F5F0E8] hover:text-[#050505] transition-none">JOIN_WAITLIST</a>
-        </div>
-    </header>
-
-    <main class="max-w-[480px] w-full px-6 pt-32 pb-24 flex flex-col gap-[60px]">
-        <!-- SECTION 1: HERO -->
-        <section class="flex flex-col gap-8">
-            <div class="flex flex-col gap-4">
-                <span class="mono-text text-[10px] tracking-widest text-[#919191] uppercase">PROTOCOL_v.2026</span>
-                <h1 class="text-4xl leading-[1.1] font-light tracking-tight text-[#F5F0E8]">
-                    Finally. A skincare scanner built for your skin.
-                </h1>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-[#b7b2a1]/20 bg-[#fef9f1]/85 backdrop-blur-xl">
+<nav class="flex items-center justify-between px-8 h-20 max-w-full">
+<div class="text-lg font-medium tracking-tight text-[#0A0A0A] font-headline uppercase">SKINPROTOCOL</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.08em] text-[0.6875rem] font-bold text-[#0A0A0A] transition-opacity duration-150" href="#">PROTOCOL</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.08em] text-[0.6875rem] font-bold text-[#5f5e5e]/60 hover:opacity-70 transition-opacity duration-150" href="#">SCIENCE</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.08em] text-[0.6875rem] font-bold text-[#5f5e5e]/60 hover:opacity-70 transition-opacity duration-150" href="#">ARCHIVE</a>
+<a href="#waitlist" class="bg-primary text-on-primary px-6 py-2.5 rounded-md text-[0.6875rem] font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-150 inline-block text-center">JOIN WAITLIST</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Section 1: Technical Hero -->
+<section class="relative min-h-[921px] flex items-center px-8 md:px-20 border-b border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-12 w-full gap-12">
+<div class="md:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 mb-6">
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded-[2px]">BETA 0.1.0</span>
+<span class="text-outline text-[10px] font-bold tracking-widest uppercase">STABILIZED FORMULATION RELEASE</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-medium tracking-tight text-inverse-surface mb-8 leading-[1.1]">
+                        Precision skincare <br/>defined by data.
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                        A clinical-grade operating system for your epidermis. We analyze 42 biochemical markers to formulate your exact technical manuscript.
+                    </p>
+<form class="flex flex-col sm:flex-row gap-4 waitlist-form" id="form-hero">
+<input type="hidden" name="access_key" value="68b80995-17e2-4112-96f4-52483806f3f7">
+<input type="hidden" name="source" value="Hero Section">
+<div class="relative flex-grow max-w-sm">
+<input name="email" required class="w-full bg-surface-container-lowest border border-outline-variant/30 px-6 py-4 rounded-md text-[0.6875rem] font-bold tracking-widest focus:ring-0 focus:border-primary outline-none transition-all" placeholder="ENTER EMAIL ADDRESS" type="email"/>
+</div>
+<button type="submit" class="bg-primary text-on-primary px-8 py-4 rounded-md text-[0.6875rem] font-bold uppercase tracking-widest hover:bg-primary-dim transition-all submit-btn whitespace-nowrap">
+                            REQUEST ACCESS
+                        </button>
+</form>
+</div>
+<div class="md:col-span-5 relative aspect-[4/5] overflow-hidden rounded-xl hidden md:block">
+<img alt="Minimalist clinical skincare bottle on a pristine white marble surface with sharp laboratory lighting and soft shadows" class="w-full h-full object-cover grayscale-[20%]" data-alt="Minimalist clinical skincare bottle on a pristine white marble surface with sharp laboratory lighting and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGQ2eO6Aiu9flwNHx-OKx5_NNG7QJgfPFMTdcKWhaTCcT6N-sJzbJpsj6njWiLZX6-R21NFfz2zpfKsO9SgeBz8C8sw2Cc219UaCvHVGytN_yEubn5d7sd188JOGwykQRUNcrJQWkPVHjZNHdHy0rWevTgz3N0XiKwFDjO5AhZI-_PGTs8K7mHGN4GSfRotPx3ZoBGBT7G38QHebVi2p7Oa_wKHsmcf9f8tYa5A6OKlu7LORYLxg7V82jk6lZZR6greKyhDahehPRU"/>
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur p-4 ghost-border">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-bold tracking-[0.1em] text-on-surface">PROTOCOL ID: 882-X</span>
+<span class="text-[10px] font-bold tracking-[0.1em] text-tertiary uppercase">In-Vitro Confirmed</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Laboratory Grid (Features) -->
+<section class="py-24 px-8 md:px-20 bg-surface-container-low">
+<div class="mb-16">
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-outline">CORE CAPABILITIES</span>
+<h2 class="text-3xl font-medium mt-4">The Analytical Framework</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20">
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">biotech</span>
+<h3 class="text-xl font-medium mb-4">Biochemical Profiling</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Quantifying sebum levels, hydration dynamics, and barrier integrity through AI-driven visual diagnostics.</p>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">science</span>
+<h3 class="text-xl font-medium mb-4">Compound Synthesis</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Dynamic ingredient ratios that evolve with your climate, hormone cycles, and environmental exposure.</p>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">terminal</span>
+<h3 class="text-xl font-medium mb-4">Digital Manuscript</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">A live-updating ledger of your skin's progression, tracked across 12 unique physiological metrics.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Asymmetric Layout (Evidence) -->
+<section class="py-24 px-8 md:px-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="order-2 md:order-1">
+<div class="relative">
+<img alt="Microscopic texture of a serum showing complex molecular structures and high-viscosity droplets under polarized light" class="w-full aspect-square object-cover rounded-xl shadow-xl" data-alt="Microscopic texture of a serum showing complex molecular structures and high-viscosity droplets under polarized light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY51Cc9HG8AvrBr8O6H_oBi3HWNT8MpaeITuPChcGPlBKehy0bGX112PhbdjWS_7XMXD1hq5wJZ3eHroc7Y5eFW7THLQvdmxRzL_llfVGIkEkGdtMrMuoxbrDGOvdRvfJqObdrn_XlnaGMreluHzdyreOqEwWmiVI_WWS0AS6vhoeGpU6ulMf2atwOU_HgsIK3BqKfsEPjveTeMOR8htmoFdJAJ8HVyAphFuEceEm7S1qweod-r43V8EHxU69KS-9P3tN-0pvIwYkU"/>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-surface-container-highest border border-outline-variant/30 flex flex-col justify-center items-center text-center p-6 hidden md:flex">
+<span class="text-3xl font-bold text-primary tracking-tighter">94.8%</span>
+<span class="text-[9px] font-bold tracking-widest uppercase mt-2">Barrier <br/>Efficiency</span>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-tertiary">CLINICAL EFFICACY</span>
+<h2 class="text-4xl font-medium mt-6 mb-8 leading-tight">Moving beyond vanity <br/>into verified health.</h2>
+<p class="text-on-surface-variant mb-10 leading-relaxed">Traditional skincare relies on mass-market averages. SkinProtocol treats your skin as a unique biological environment. Our early cohorts report a 40% reduction in oxidative stress within 14 days of protocol adherence.</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+<div>
+<span class="block font-bold text-xs tracking-wide uppercase">Dermatologically Verified</span>
+<p class="text-sm text-on-surface-variant">Validated by tertiary research laboratories.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+<div>
+<span class="block font-bold text-xs tracking-wide uppercase">Dynamic Adaptation</span>
+<p class="text-sm text-on-surface-variant">Formulas shift based on local UV indices.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 4: Bento Technical Specs -->
+<section class="py-24 px-8 md:px-20 bg-surface-container-low border-y border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-surface p-10 flex flex-col justify-between border border-outline-variant/20 rounded-xl">
+<span class="text-[10px] font-bold tracking-widest uppercase text-outline">TECHNICAL SPECIFICATION</span>
+<div class="mt-20">
+<h3 class="text-2xl font-medium mb-4">Molecular Weight Analysis</h3>
+<p class="text-sm text-on-surface-variant">Our serums utilize multi-tiered molecular weights for deep epidermal penetration without surface congestion.</p>
+</div>
+</div>
+<div class="bg-tertiary text-on-tertiary p-10 flex flex-col justify-between rounded-xl">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<div>
+<h3 class="text-xl font-medium mb-2">Purity Guard</h3>
+<p class="text-xs opacity-80 uppercase tracking-widest font-bold">Zero Fillers</p>
+</div>
+</div>
+<div class="bg-surface-container-highest p-10 flex flex-col justify-between border border-outline-variant/20 rounded-xl">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-error rounded-full animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-widest uppercase">LIVE ANALYTICS</span>
+</div>
+<div class="text-4xl font-light tracking-tighter">12.4k</div>
+<div class="text-[10px] font-bold tracking-widest uppercase">Protocols Active</div>
+</div>
+<div class="md:col-span-1 bg-surface p-10 border border-outline-variant/20 rounded-xl">
+<h4 class="text-[10px] font-bold tracking-widest uppercase mb-4 text-outline">ACTIVE AGENTS</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="text-xs font-medium">Niacinamide</span>
+<span class="bg-surface-container-low px-2 py-0.5 text-[9px] font-bold text-tertiary rounded-[2px]">10%</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="text-xs font-medium">Hyaluronic</span>
+<span class="bg-surface-container-low px-2 py-0.5 text-[9px] font-bold text-tertiary rounded-[2px]">2.5%</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="text-xs font-medium">Peptides</span>
+<span class="bg-surface-container-low px-2 py-0.5 text-[9px] font-bold text-tertiary rounded-[2px]">1.2%</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 bg-inverse-surface text-surface p-10 flex flex-col md:flex-row justify-between items-end md:items-center rounded-xl">
+<div>
+<h3 class="text-2xl font-medium mb-2">Early Cohort Enrollment</h3>
+<p class="text-surface/60 text-sm">Join the first 5,000 protocol participants for lifetime analysis priority.</p>
+</div>
+<a href="#waitlist" class="mt-6 md:mt-0 bg-surface text-inverse-surface px-8 py-4 rounded-md text-[0.6875rem] font-bold uppercase tracking-widest hover:bg-surface-variant transition-colors inline-block text-center whitespace-nowrap">
+                        SECURE POSITION
+                    </a>
+</div>
+</div>
+</section>
+<!-- Section 5: The Protocol Manuscript (Success State Concept) -->
+<section class="py-32 px-8 md:px-20 text-center max-w-4xl mx-auto">
+<span class="text-tertiary text-[10px] font-bold tracking-[0.3em] uppercase mb-8 block">THE RESULTS MATRIX</span>
+<h2 class="text-4xl md:text-5xl font-medium mb-12 tracking-tight">Standardized excellence <br/>for biological diversity.</h2>
+<div class="flex flex-col md:flex-row gap-12 justify-center items-center">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">biotech</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">Analysis</span>
+</div>
+<div class="hidden md:block w-20 h-px bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">science</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">Formulation</span>
+</div>
+<div class="hidden md:block w-20 h-px bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">task_alt</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">Deployment</span>
+</div>
+</div>
+</section>
+<!-- Section 6: Image Gallery Editorial -->
+<section class="py-12 px-8 md:px-20 overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-[600px]">
+<div class="relative overflow-hidden group rounded-xl">
+<img alt="Close-up of a laboratory pipette dispensing a clear fluid into a glass vial with scientific precision and bright lighting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a laboratory pipette dispensing a clear fluid into a glass vial with scientific precision and bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHipo_wfdrZ4XuIybR-IEno69DUw7KKtNPhHbZxTucROXP6WBd3scYC0rDQD2rxk3c5uA5oKYyTCm1VsAH2dRMSA3tMrpP9ZcApqbDPDQPvNaqfVIHdZYjKFxVFhPBWkUVE0bXgcIS8A371w-uQOjesBH4ihCwUououUj6YIjMBja-WbqVNpcmk3cV7NexrdFvAwEGgihSUdMJwNGjS4TgD2ref_DVLL5HPwtNbYjYU3lRdE4tGBw-pYXQJXqtu6tdBWN8S4Sn8Q93"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-8 left-8 text-surface">
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase">PHASE I</span>
+<h4 class="text-xl font-medium mt-2">Technical Extraction</h4>
+</div>
+</div>
+<div class="grid grid-rows-2 gap-8">
+<div class="relative overflow-hidden group rounded-xl">
+<img alt="Highly detailed macroscopic photograph of human skin surface showing natural pores and healthy texture in soft focus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Highly detailed macroscopic photograph of human skin surface showing natural pores and healthy texture in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW5v-FdiOagLaQTw5oXhxuiOo1NFgzjjEdn8qCr_yzJcU9C7R7yetf0NwF85DMDGiQ6PrxwZXq2mc-vvwa_M5S4JV4XOI-m0GLSs0tRvJzmv9eyRIn1VMjGgspItBpdqdxRDbyMJZJZ4q51Z5_p5uIULfhVtc9ppuWX6YSbxwi2eLffzRqFYC1SvcKTCnStt8vOXDJASKpNMlMfn__0jPDrN3JS3SgA5VuBo7FOAVa4UQxe3FLipZCqzLI_HNisVw9UIDn9uAndk2n"/>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="bg-surface-container-high p-12 flex flex-col justify-center items-center text-center rounded-xl">
+<p class="text-on-surface-variant font-medium italic text-lg leading-relaxed mb-6">"SkinProtocol has bridged the gap between clinical dermatology and a daily luxury ritual."</p>
+<span class="text-[10px] font-bold tracking-widest uppercase">— DR. ELIZA VANCE, PhD BIOLOGY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Final Conversion Call -->
+<section id="waitlist" class="py-32 px-8 md:px-20 bg-surface border-t border-outline-variant/10 scroll-mt-20">
+<div class="max-w-4xl mx-auto text-center">
+<div class="bg-tertiary-container/30 inline-block px-4 py-1 rounded-full mb-8">
+<span class="text-on-tertiary-container text-[10px] font-bold tracking-[0.15em] uppercase">WAITLIST IS 82% CAPACITY</span>
+</div>
+<h2 class="text-5xl font-medium mb-8 tracking-tight">Become a Protocol <br/>Pioneer.</h2>
+<div class="max-w-md mx-auto space-y-4">
+<form class="space-y-4 waitlist-form" id="form-footer">
+<input type="hidden" name="access_key" value="68b80995-17e2-4112-96f4-52483806f3f7">
+<input type="hidden" name="source" value="Footer CTA">
+<input name="email" required class="w-full bg-surface-container-lowest border border-outline-variant/30 px-6 py-5 rounded-md text-[0.6875rem] font-bold tracking-widest text-center focus:ring-0 focus:border-primary outline-none transition-all" placeholder="EMAIL@DOMAIN.COM" type="email"/>
+<button type="submit" class="w-full bg-primary text-on-primary py-5 rounded-md text-[0.6875rem] font-bold uppercase tracking-widest hover:bg-primary-dim transition-all shadow-lg shadow-primary/10 submit-btn w-full">
+                        REQUEST SECURE ACCESS
+                    </button>
+</form>
+<p class="text-[9px] text-outline font-bold tracking-widest uppercase pt-4">PRIVACY COMPLIANT ENCRYPTION GUARANTEED</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#b7b2a1]/10 bg-[#f8f3e9]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="text-sm font-bold text-[#0A0A0A] uppercase tracking-tighter">SKINPROTOCOL</div>
+<p class="font-['Space_Grotesk'] text-[0.6875rem] tracking-[0.08em] font-bold uppercase text-[#5f5e5e] md:max-w-xs text-center md:text-left">
+                    The Technical Manuscript for Advanced Epidermal Health and Data-Driven Formulations.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-[0.08em] font-bold uppercase text-[#5f5e5e] hover:text-[#0A0A0A] transition-colors duration-200" href="#">PRIVACY</a>
+<a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-[0.08em] font-bold uppercase text-[#5f5e5e] hover:text-[#0A0A0A] transition-colors duration-200" href="#">TERMS</a>
+<a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-[0.08em] font-bold uppercase text-[#5f5e5e] hover:text-[#0A0A0A] transition-colors duration-200" href="#">PROTOCOL</a>
+<a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-[0.08em] font-bold uppercase text-[#5f5e5e] hover:text-[#0A0A0A] transition-colors duration-200" href="#">CONTACT</a>
+</div>
+<div class="font-['Space_Grotesk'] text-[0.6875rem] tracking-[0.08em] font-bold uppercase text-[#5f5e5e]/50">
+                © 2024 SKINPROTOCOL. TECHNICAL MANUSCRIPT V.1.0
             </div>
-            <p class="text-[#888888] font-light leading-relaxed max-w-[340px]">
-                Indian, Korean and Gulf brands. Transparent safety scores. Launching 2026.
-            </p>
-        </section>
+</div>
+</footer>
+<script>
+    const forms = document.querySelectorAll('.waitlist-form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('.submit-btn');
+            const originalText = btn.innerText;
+            btn.innerText = 'PROCESSING_';
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+            btn.disabled = true;
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
 
-        <!-- SECTION 2: WAITLIST -->
-        <section id="waitlist" class="hairline-t pt-10 flex flex-col gap-10 scroll-mt-24">
-            <div class="flex items-baseline gap-2">
-                <span class="text-2xl mono-text font-medium text-[#F5F0E8]">14,282</span>
-                <span class="mono-text text-[10px] uppercase text-[#888888] tracking-widest">— PEOPLE ALREADY WAITING</span>
-            </div>
-            <form class="flex flex-col gap-6 waitlist-form" id="form-hero">
-                <input type="hidden" name="access_key" value="68b80995-17e2-4112-96f4-52483806f3f7">
-                <input type="hidden" name="source" value="Hero Section">
-                <div class="flex flex-col gap-2">
-                    <label class="mono-text text-[9px] uppercase tracking-widest text-[#919191]">INPUT_EMAIL_ADDRESS</label>
-                    <input name="email" required class="bg-transparent border border-[#2A2A2A] focus:border-[#F5F0E8] focus:ring-0 rounded-none px-4 py-3 text-sm mono-text placeholder:text-[#2A2A2A] text-[#F5F0E8] w-full transition-none" placeholder="USER@PROVIDER.COM" type="email"/>
-                </div>
-                <button type="submit" class="w-full bg-[#F5F0E8] text-[#050505] py-4 mono-text font-bold text-xs tracking-[0.2em] hover:bg-[#2A2A2A] hover:text-[#F5F0E8] transition-none submit-btn">JOIN THE WAITLIST</button>
-            </form>
-        </section>
-
-        <!-- SECTION 3: PROBLEM CARDS -->
-        <section class="hairline-t pt-10 flex flex-col gap-8">
-            <div class="flex flex-col gap-2">
-                <span class="mono-text text-[10px] uppercase text-[#F5F0E8] bg-[#2A2A2A] self-start px-2 py-0.5 tracking-widest">ANA_V2026.01</span>
-                <h2 class="text-2xl font-bold tracking-tight uppercase">YOUR SKINCARE APP DOESN'T KNOW YOU EXIST.</h2>
-            </div>
-            <div class="flex flex-col">
-                <!-- Card 1 -->
-                <div class="border border-[#2A2A2A] p-6 flex flex-col gap-4 relative overflow-hidden group">
-                    <span class="absolute top-2 right-4 mono-text text-[8px] text-[#2A2A2A]">SKP-ERR-001</span>
-                    <span class="material-symbols-outlined text-[#F5F0E8] text-lg" data-icon="search_off">search_off</span>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="mono-text text-xs font-bold uppercase">SCANNED MINIMALIST.</h3>
-                        <p class="text-[11px] text-[#888888] font-light">Product not found in database. Local formulations ignored.</p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="border-x border-b border-[#2A2A2A] p-6 flex flex-col gap-4 relative overflow-hidden">
-                    <span class="absolute top-2 right-4 mono-text text-[8px] text-[#2A2A2A]">SKP-ERR-002</span>
-                    <span class="material-symbols-outlined text-[#F5F0E8] text-lg" data-icon="query_stats">query_stats</span>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="mono-text text-xs font-bold uppercase">MYSTERY SCORES.</h3>
-                        <p class="text-[11px] text-[#888888] font-light">Zero sources provided. Proprietary black-box algorithms.</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="border-x border-b border-[#2A2A2A] p-6 flex flex-col gap-4 relative overflow-hidden">
-                    <span class="absolute top-2 right-4 mono-text text-[8px] text-[#2A2A2A]">SKP-ERR-003</span>
-                    <span class="material-symbols-outlined text-[#F5F0E8] text-lg" data-icon="cancel">cancel</span>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="mono-text text-xs font-bold uppercase">INFINITE LOOPS.</h3>
-                        <p class="text-[11px] text-[#888888] font-light">Can't find the cancel button. Hidden subscription traps.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: FEATURES -->
-        <section class="hairline-t pt-10 flex flex-col gap-10">
-            <h2 class="text-2xl font-bold tracking-tight uppercase max-w-[200px] leading-tight">BUILT DIFFERENT.<br/>FROM THE<br/>GROUND UP.</h2>
-            <div class="flex flex-col gap-8">
-                <!-- Feature 1 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
-                    <div class="flex flex-col gap-1 -mt-1">
-                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">REGIONAL INTEGRITY</span>
-                        <p class="text-[11px] text-[#888888] leading-relaxed">Full ingredient indexing for Asian and Middle Eastern pharmaceutical brands.</p>
-                    </div>
-                </div>
-                <!-- Feature 2 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
-                    <div class="flex flex-col gap-1 -mt-1">
-                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">SOURCE TRANSPARENCY</span>
-                        <p class="text-[11px] text-[#888888] leading-relaxed">Every safety score is linked to a published clinical study or EU/FDA regulation.</p>
-                    </div>
-                </div>
-                <!-- Feature 3 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
-                    <div class="flex flex-col gap-1 -mt-1">
-                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">DEEP SCANNING</span>
-                        <p class="text-[11px] text-[#888888] leading-relaxed">AI vision trained on multi-lingual packaging and reflective surfaces.</p>
-                    </div>
-                </div>
-                <!-- Feature 4 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
-                    <div class="flex flex-col gap-1 -mt-1">
-                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">ZERO FRICTION</span>
-                        <p class="text-[11px] text-[#888888] leading-relaxed">No ads. No sponsored products. No hidden subscription tiers.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
-    <!-- Footer Shell -->
-    <footer class="w-full border-t border-[#2A2A2A] mt-24">
-        <div class="max-w-[480px] mx-auto flex flex-col gap-8 px-6 py-12">
-            <div class="flex flex-col gap-4">
-                <a class="mono-text text-[10px] tracking-widest uppercase text-[#474747] hover:text-[#F5F0E8] transition-none" href="#">TERMINOLOGY</a>
-                <a class="mono-text text-[10px] tracking-widest uppercase text-[#474747] hover:text-[#F5F0E8] transition-none" href="#">PRIVACY_PROTOCOL</a>
-                <a class="mono-text text-[10px] tracking-widest uppercase text-[#474747] hover:text-[#F5F0E8] transition-none" href="#">LAB_LOCATIONS</a>
-            </div>
-            <div class="pt-8 border-t border-[#2A2A2A]">
-                <span class="mono-text text-[10px] tracking-tighter uppercase text-[#2A2A2A]">©2024 SKINPROTOCOL. ALL_RIGHTS_RESERVED.</span>
-            </div>
-        </div>
-    </footer>
-    <script>
-        const forms = document.querySelectorAll('.waitlist-form');
-        
-        forms.forEach(form => {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const btn = form.querySelector('.submit-btn');
-                const originalText = btn.innerText;
-                btn.innerText = 'PROCESSING_';
-                btn.classList.add('opacity-50', 'cursor-not-allowed');
-                btn.disabled = true;
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
                 
-                const formData = new FormData(form);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-
-                try {
-                    const response = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: json
-                    });
-                    
-                    const result = await response.json();
-                    if (response.status == 200) {
-                        btn.innerText = 'ACCESS_SECURED';
-                        form.reset();
-                    } else {
-                        btn.innerText = 'ERROR_RETRY';
-                        console.error(result);
-                        btn.disabled = false;
-                    }
-                } catch(error) {
-                    btn.innerText = 'SYS_ERROR';
-                    console.error(error);
+                const result = await response.json();
+                if (response.status == 200) {
+                    btn.innerText = 'ACCESS_SECURED';
+                    form.reset();
+                } else {
+                    btn.innerText = 'ERROR_RETRY';
+                    console.error(result);
                     btn.disabled = false;
-                } finally {
-                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
-                    setTimeout(() => {
-                        if(btn.innerText === 'ERROR_RETRY' || btn.innerText === 'SYS_ERROR') {
-                            btn.innerText = originalText;
-                        }
-                    }, 3000);
                 }
-            });
+            } catch(error) {
+                btn.innerText = 'SYS_ERROR';
+                console.error(error);
+                btn.disabled = false;
+            } finally {
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                setTimeout(() => {
+                    if(btn.innerText === 'ERROR_RETRY' || btn.innerText === 'SYS_ERROR') {
+                        btn.innerText = originalText;
+                    }
+                }, 3000);
+            }
         });
-    </script>
-</body>
-</html>
+    });
+</script>
+</body></html>
