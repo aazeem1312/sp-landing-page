@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SKINPROTOCOL | CLINICAL_MONOLITH</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#050505",
+                        surface: "#050505"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #F5F0E8;
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .hairline-y {
+            border-top: 1px solid #2A2A2A;
+            border-bottom: 1px solid #2A2A2A;
+        }
+        .hairline-t {
+            border-top: 1px solid #2A2A2A;
+        }
+        .hairline-b {
+            border-bottom: 1px solid #2A2A2A;
+        }
+        .grid-line {
+            position: fixed;
+            left: calc(50% - 240px);
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #2A2A2A;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center">
+    <!-- Structural Anchor Line -->
+    <div class="grid-line"></div>
+
+    <!-- Top Navigation Shell -->
+    <header class="fixed top-0 w-full z-50 border-b border-[#2A2A2A] bg-[#050505]">
+        <div class="max-w-[480px] mx-auto flex justify-between items-center px-6 h-16">
+            <span class="text-xl font-bold tracking-[0.2em] text-[#F5F0E8] font-['Space_Grotesk'] uppercase">SKINPROTOCOL</span>
+            <button class="font-['JetBrains_Mono'] text-[10px] tracking-tighter uppercase px-3 py-1 border border-[#F5F0E8] text-[#F5F0E8] hover:bg-[#F5F0E8] hover:text-[#050505] transition-none">JOIN_WAITLIST</button>
+        </div>
+    </header>
+
+    <main class="max-w-[480px] w-full px-6 pt-32 pb-24 flex flex-col gap-[60px]">
+        <!-- SECTION 1: HERO -->
+        <section class="flex flex-col gap-8">
+            <div class="flex flex-col gap-4">
+                <span class="mono-text text-[10px] tracking-widest text-[#919191] uppercase">PROTOCOL_v.2026</span>
+                <h1 class="text-4xl leading-[1.1] font-light tracking-tight text-[#F5F0E8]">
+                    Finally. A skincare scanner built for your skin.
+                </h1>
+            </div>
+            <p class="text-[#888888] font-light leading-relaxed max-w-[340px]">
+                Indian, Korean and Gulf brands. Transparent safety scores. Launching 2026.
+            </p>
+        </section>
+
+        <!-- SECTION 2: WAITLIST -->
+        <section class="hairline-t pt-10 flex flex-col gap-10">
+            <div class="flex items-baseline gap-2">
+                <span class="text-2xl mono-text font-medium text-[#F5F0E8]">14,282</span>
+                <span class="mono-text text-[10px] uppercase text-[#888888] tracking-widest">— PEOPLE ALREADY WAITING</span>
+            </div>
+            <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <label class="mono-text text-[9px] uppercase tracking-widest text-[#919191]">INPUT_EMAIL_ADDRESS</label>
+                    <input class="bg-transparent border border-[#2A2A2A] focus:border-[#F5F0E8] focus:ring-0 rounded-none px-4 py-3 text-sm mono-text placeholder:text-[#2A2A2A] text-[#F5F0E8] w-full transition-none" placeholder="USER@PROVIDER.COM" type="email"/>
+                </div>
+                <button class="w-full bg-[#F5F0E8] text-[#050505] py-4 mono-text font-bold text-xs tracking-[0.2em] hover:bg-[#2A2A2A] hover:text-[#F5F0E8] transition-none">JOIN THE WAITLIST</button>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROBLEM CARDS -->
+        <section class="hairline-t pt-10 flex flex-col gap-8">
+            <div class="flex flex-col gap-2">
+                <span class="mono-text text-[10px] uppercase text-[#F5F0E8] bg-[#2A2A2A] self-start px-2 py-0.5 tracking-widest">ANA_V2026.01</span>
+                <h2 class="text-2xl font-bold tracking-tight uppercase">YOUR SKINCARE APP DOESN'T KNOW YOU EXIST.</h2>
+            </div>
+            <div class="flex flex-col">
+                <!-- Card 1 -->
+                <div class="border border-[#2A2A2A] p-6 flex flex-col gap-4 relative overflow-hidden group">
+                    <span class="absolute top-2 right-4 mono-text text-[8px] text-[#2A2A2A]">SKP-ERR-001</span>
+                    <span class="material-symbols-outlined text-[#F5F0E8] text-lg" data-icon="search_off">search_off</span>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="mono-text text-xs font-bold uppercase">SCANNED MINIMALIST.</h3>
+                        <p class="text-[11px] text-[#888888] font-light">Product not found in database. Local formulations ignored.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="border-x border-b border-[#2A2A2A] p-6 flex flex-col gap-4 relative overflow-hidden">
+                    <span class="absolute top-2 right-4 mono-text text-[8px] text-[#2A2A2A]">SKP-ERR-002</span>
+                    <span class="material-symbols-outlined text-[#F5F0E8] text-lg" data-icon="query_stats">query_stats</span>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="mono-text text-xs font-bold uppercase">MYSTERY SCORES.</h3>
+                        <p class="text-[11px] text-[#888888] font-light">Zero sources provided. Proprietary black-box algorithms.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="border-x border-b border-[#2A2A2A] p-6 flex flex-col gap-4 relative overflow-hidden">
+                    <span class="absolute top-2 right-4 mono-text text-[8px] text-[#2A2A2A]">SKP-ERR-003</span>
+                    <span class="material-symbols-outlined text-[#F5F0E8] text-lg" data-icon="cancel">cancel</span>
+                    <div class="flex flex-col gap-1">
+                        <h3 class="mono-text text-xs font-bold uppercase">INFINITE LOOPS.</h3>
+                        <p class="text-[11px] text-[#888888] font-light">Can't find the cancel button. Hidden subscription traps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FEATURES -->
+        <section class="hairline-t pt-10 flex flex-col gap-10">
+            <h2 class="text-2xl font-bold tracking-tight uppercase max-w-[200px] leading-tight">BUILT DIFFERENT.<br/>FROM THE<br/>GROUND UP.</h2>
+            <div class="flex flex-col gap-8">
+                <!-- Feature 1 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
+                    <div class="flex flex-col gap-1 -mt-1">
+                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">REGIONAL INTEGRITY</span>
+                        <p class="text-[11px] text-[#888888] leading-relaxed">Full ingredient indexing for Asian and Middle Eastern pharmaceutical brands.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
+                    <div class="flex flex-col gap-1 -mt-1">
+                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">SOURCE TRANSPARENCY</span>
+                        <p class="text-[11px] text-[#888888] leading-relaxed">Every safety score is linked to a published clinical study or EU/FDA regulation.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
+                    <div class="flex flex-col gap-1 -mt-1">
+                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">DEEP SCANNING</span>
+                        <p class="text-[11px] text-[#888888] leading-relaxed">AI vision trained on multi-lingual packaging and reflective surfaces.</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-[3px] h-10 bg-[#F5F0E8]"></div>
+                    <div class="flex flex-col gap-1 -mt-1">
+                        <span class="mono-text text-[10px] uppercase text-[#F5F0E8] tracking-widest">ZERO FRICTION</span>
+                        <p class="text-[11px] text-[#888888] leading-relaxed">No ads. No sponsored products. No hidden subscription tiers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FINAL CTA -->
+        <section class="hairline-t pt-16 pb-12 flex flex-col gap-12 bg-[#131313] border border-[#2A2A2A] px-8">
+            <div class="flex flex-col gap-2 text-center">
+                <h2 class="text-2xl font-bold tracking-tight uppercase">BE FIRST TO KNOW.</h2>
+                <p class="mono-text text-[9px] uppercase tracking-tighter text-[#888888]">SECURE_PRIORITY_ACCESS</p>
+            </div>
+            <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <label class="mono-text text-[9px] uppercase tracking-widest text-[#919191]">INPUT_FIELD_01</label>
+                    <input class="bg-transparent border border-[#2A2A2A] focus:border-[#F5F0E8] focus:ring-0 rounded-none px-4 py-3 text-sm mono-text placeholder:text-[#2A2A2A] text-[#F5F0E8] w-full transition-none text-center" placeholder="EMAIL_RECIPIENT" type="email"/>
+                </div>
+                <button class="w-full bg-[#F5F0E8] text-[#050505] py-4 mono-text font-bold text-xs tracking-[0.2em] hover:bg-[#050505] hover:text-[#F5F0E8] border border-[#F5F0E8] transition-none">JOIN THE WAITLIST</button>
+            </div>
+            <div class="flex justify-center">
+                <span class="mono-text text-[8px] text-[#474747] uppercase">System ready for deployment _</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Shell -->
+    <footer class="w-full border-t border-[#2A2A2A] mt-24">
+        <div class="max-w-[480px] mx-auto flex flex-col gap-8 px-6 py-12">
+            <div class="flex flex-col gap-4">
+                <a class="mono-text text-[10px] tracking-widest uppercase text-[#474747] hover:text-[#F5F0E8] transition-none" href="#">TERMINOLOGY</a>
+                <a class="mono-text text-[10px] tracking-widest uppercase text-[#474747] hover:text-[#F5F0E8] transition-none" href="#">PRIVACY_PROTOCOL</a>
+                <a class="mono-text text-[10px] tracking-widest uppercase text-[#474747] hover:text-[#F5F0E8] transition-none" href="#">LAB_LOCATIONS</a>
+            </div>
+            <div class="pt-8 border-t border-[#2A2A2A]">
+                <span class="mono-text text-[10px] tracking-tighter uppercase text-[#2A2A2A]">©2024 SKINPROTOCOL. ALL_RIGHTS_RESERVED.</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
